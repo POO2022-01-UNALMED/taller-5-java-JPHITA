@@ -15,12 +15,12 @@ public class Zona {
 		this.setZoo(zoo);
 	}
 	
-	public void agregarAnimales() {
-		
+	public void agregarAnimales(Animal animal) {
+		this.animales.add(animal);
 	}
 	
-	public void cantidadAnimales() {
-		animales.
+	public int cantidadAnimales() {
+		return this.animales.size();
 	}
 
 	public String getNombre() {

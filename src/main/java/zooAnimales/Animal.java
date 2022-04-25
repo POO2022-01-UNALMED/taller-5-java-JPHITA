@@ -10,6 +10,13 @@ public class Animal {
 	private String habitat;
 	private String genero;
 	private Zona zona;
+
+	protected static int aves;
+	protected static int anfibios;
+	protected static int mamiferos;
+	protected static int peces;
+	protected static int reptiles;
+
 	
 	public Animal() {}
 
@@ -18,18 +25,24 @@ public class Animal {
 		this.setEdad(edad);
 		this.setHabitat(habitat);
 		this.setGenero(genero);
+
+		totalAnimales++;
 	}
 	
-	public void movimiento() {
-		
+	public String movimiento(){
+		return "desplazarse";
 	}
 	
-	public void totalporTipo() {
-		
+	public static String totalPorTipo() {
+		return "Mamiferos: "+mamiferos+"\n" + 
+		"Aves: "+aves+"\n" + 
+		"Reptiles: "+reptiles+"\n" + 
+		"Peces: "+peces+"\n" + 
+		"Anfibios: "+anfibios;
 	}
 	
 	public String toString() {
-		return "";
+		return "Mi nombre es "+this.nombre+", tengo una edad de "+this.edad+", habito en "+this.habitat+" y mi genero es "+this.genero;
 	}
 
 	public String getNombre() {

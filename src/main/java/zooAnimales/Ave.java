@@ -3,33 +3,47 @@ package zooAnimales;
 import java.util.ArrayList;
 
 public class Ave extends Animal {
-	private ArrayList<Ave> listado;
-	public int halcones;
-	public int aguilas;
+	private static ArrayList<Ave> listado;
+	public static int halcones;
+	public static int aguilas;
 	private String colorPlumas;
 
-	public Ave(){}
+	public Ave(){
+		aves++;
+	}
 
 	public Ave(String nombre, int edad, String habitat, String genero, String colorPlumas){
 		super(nombre, edad, habitat, genero);
 
 		this.colorPlumas = colorPlumas;
+
+		aves++;
 	}
 	
 	public void cantidadAves() {
 		
 	}
 
-	public void movimiento() {
-		
+	public String movimiento() {
+		return "volar";
 	}
 	
-	public void crearHalcon() {
-		
+	public static Animal crearHalcon(String nombre, int edad, String genero) {
+		Ave avesita = new Ave(nombre, edad, "montanas", genero, "cafe glorioso");
+
+		halcones++;
+		listado.add(avesita);
+
+		return avesita;		
 	}
 	
-	public void crearAguila() {
-		
+	public static Animal crearAguila(String nombre, int edad, String genero) {
+		Ave avesita = new Ave(nombre, edad, "montanas", genero, "blanco y amarillo");
+
+		aguilas++;
+		listado.add(avesita);
+
+		return avesita;
 	}
 
 	public String getColorPlumas() {

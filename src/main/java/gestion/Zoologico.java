@@ -19,7 +19,12 @@ public class Zoologico {
 	}
 	
 	public int cantidadTotalAnimales() {
-		
+		int r = 0;
+		for (Zona zona : zonas) {
+			r += zona.cantidadAnimales();
+		}
+
+		return r;
 	}
 
 	public String getNombre() {
@@ -28,5 +33,13 @@ public class Zoologico {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public ArrayList<Zona> getZona() {
+		return zonas;
+	}
+
+	public void setZona(ArrayList<Zona> zonas) {
+		this.zonas = zonas;
 	}
 }
